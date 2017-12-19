@@ -7,7 +7,14 @@
     "start": "nodemon bin/www --exec babel-node",
     "dev": "nodemon --debug bin/www --exec babel-node",
     "lint": "./node_modules/.bin/eslint **/*.js;",
-    "test": "mocha --require babel-register --exit"
+    "lint-fix-all": "./node_modules/.bin/eslint --fix **/*.js;",
+    "lint-fix": "./node_modules/.bin/eslint --fix",
+    "sequelize": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize",
+    "migrate": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize db:migrate",
+    "seed-delete": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize db:seed:undo:all",
+    "seed": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize db:seed:all",
+    "test": "mocha --require babel-register --exit",
+    "posttest": "npm run lint"
   },
   "author": "jperazafeliciano@gmail.com",
   "license": "MIT",
@@ -22,7 +29,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "mocha": "^4.0.1",
-    "nodemon": "^1.13.3"
+    "nodemon": "^1.13.3",
+    "sequelize-cli": "^3.2.0"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
