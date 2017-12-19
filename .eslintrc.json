@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb",
+  "env": {
+      "browser": false,
+      "node": true,
+      "jest": true
+  }, 
+  "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "jsx-a11y/img-has-alt": "off",
+      "react/jsx-space-before-closing": "off",
+      "prefer-destructuring": ["error", {"object": true, "array": true}]
+  },
+  "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+  ]
+}
